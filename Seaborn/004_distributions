@@ -1,0 +1,93 @@
+DISTRIBUTIONS
+Create histograms and density plots
+
+1.  Set up the notebook
+    As always, we begin by setting up the coding environment
+
+    -- Code --
+    import pandas as pd
+    pd.plotting.register_matplotlib_converters()
+    import matplotlib.pyplot as plt
+    %matplotlib inline
+    import seaborn as sns
+    print("Setup Complete")
+
+    -- Output: Setup Complete
+
+2.  Setup the dataset
+    We'll work with a dataset of 150 different flowers, or 50 each from three different species of iris (Iris setosa, Iris versicolor, and Iris virginica).
+    kaggle kernels output alexisbcook/distributions -p /path/to/dest
+
+3.  Examine the data
+    Each row in the dataset corresponds to a different flower. 
+    There are four measurements: the sepal length and width, along with the petal length and width. We also keep track of the corresponding species.
+
+    -- Code --
+    # Path of the file to read
+    iris_filepath = "../input/iris.csv"
+    
+    # Read the file into a variable iris_data
+    iris_data = pd.read_csv(iris_filepath, index_col="Id")
+    
+    # Print the first 5 rows of the data
+    iris_data.head()
+
+4.  Histograms
+    Say we would like to create a histogram to see how petal length varies in iris flowers. 
+    We can do this with the sns.histplot command.
+
+    -- Code --
+    # Histogram 
+    sns.histplot(iris_data['Petal Length (cm)'])
+
+5.  Density plots
+    The next type of plot is a kernel density estimate (KDE) plot. 
+    In case you're not familiar with KDE plots, you can think of it as a smoothed histogram.
+    
+    To make a KDE plot, we use the sns.kdeplot command. 
+    Setting shade=True colors the area below the curve (and data= chooses the column we would like to plot).
+    
+    -- Code --
+    # KDE plot 
+    sns.kdeplot(data=iris_data['Petal Length (cm)'], shade=True)
+    /opt/conda/lib/python3.7/site-packages/ipykernel_launcher.py:2: FutureWarning: 
+    
+    `shade` is now deprecated in favor of `fill`; setting `fill=True`.
+    This will become an error in seaborn v0.14.0; please update your code.
+
+6.  2D KDE plots
+    We're not restricted to a single column when creating a KDE plot. We can create a two-dimensional (2D) KDE plot with the sns.jointplot command.
+    
+    In the plot below, the color-coding shows us how likely we are to see different combinations of sepal width and petal length, where darker parts of the figure are more likely.
+    
+    -- Code --
+    # 2D KDE plot
+    sns.jointplot(x=iris_data['Petal Length (cm)'], y=iris_data['Sepal Width (cm)'], kind="kde")
+
+7.  Color-coded plots¶
+    For the next part of the tutorial, we'll create plots to understand differences between the species.
+    
+    We can create three different histograms (one for each species) of petal length by using the sns.histplot command (as above).
+     - data= provides the name of the variable that we used to read in the data
+     - x= sets the name of column with the data we want to plot
+     - hue= sets the column we'll use to split the data into different histograms
+    
+    -- Code --
+    # Histograms for each species
+    sns.histplot(data=iris_data, x='Petal Length (cm)', hue='Species')
+    # Add title
+    plt.title("Histogram of Petal Lengths, by Species")
+
+    We can also create a KDE plot for each species by using sns.kdeplot (as above). 
+    The functionality for data, x, and hue are identical to when we used sns.histplot above. 
+    Additionally, we set shade=True to color the area below each curve.
+
+    -- Code --
+    # KDE plots for each species
+    sns.kdeplot(data=iris_data, x='Petal Length (cm)', hue='Species', shade=True)
+    # Add title
+    plt.title("Distribution of Petal Lengths, by Species")
+    /opt/conda/lib/python3.7/site-packages/ipykernel_launcher.py:2: FutureWarning: 
+    
+    `shade` is now deprecated in favor of `fill`; setting `fill=True`.
+    This will become an error in seaborn v0.14.0; please update your code.
