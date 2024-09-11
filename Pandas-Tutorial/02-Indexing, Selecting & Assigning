@@ -1,0 +1,4 @@
+Native Accessors
+- Native Python objects provide good ways of indexing data
+-Pandas carries all of these over, which helps it make it easy to start with
+
