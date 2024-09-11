@@ -1,0 +1,152 @@
+1. What are the two values of the Boolean data type? How do you write them?
+- True and False. The Boolean values True and False lack the quotes you place around strings and start with capital T or F with the rest of the word in lowercase
+
+
+2. What are the three Boolean operators?
+- and, or, and not
+
+
+3. Write out the truth tables of each Boolean operator (that is, every possible combination of Boolean values for the operator and what they evaluate to).
+- the and Operator
+    True and True - True
+    True and False - False
+    False and False - False
+    False and True - False
+
+- the or Operator
+    True or True - True
+    True or False - True
+    False or True - True
+    False or False - False
+
+- the not Operator
+    not True - False
+    not False - True
+
+
+4. What do the following expressions evaluate to?
+
+(5 > 4) and (3 == 5)                - True and False - False
+not (5 > 4)                         - not True - False
+(5 > 4) or (3 == 5)                 - True or False - False
+not ((5 > 4) or (3 == 5))           - not(True or False) - not True - False
+(True and True) and (True == False) - True and False - False
+(not False) or (not True)           - True or False - True
+
+
+5. What are the six comparison operators?
+    ==  equal to
+    !=  not equal to
+    <   less than
+    >   greater than
+    <=  less than or equal to
+    >   greater than or equal to
+
+
+6. What is the difference between the equal to operator and the assignment operator?
+- the == operator (equal to) asks whether two values are the same as each other, meanwhile
+- the = operator (assignment) puts the value on the right into the variable on the left
+
+
+7. Explain what a condition is and where you would use one.
+- A condition is a statement in programming that evaluates to either true or false.
+- It is used to control the flow of a program by determining which code should be executed.
+- Conditions are commonly found in if-else statements, loops, and switch cases to make decisions based on input or program state.
+- For example, an if statement might execute a block of code only if a condition (like x > 5) is true.
+
+
+8. Identify the three blocks in this code:
+
+spam = 0
+if spam == 10:
+    print('eggs')
+    if spam > 5:
+        print('bacon')
+    else:
+        print('ham')
+    print('spam')
+print('spam')
+
+
+The three blocks in the given code are:
+1. Main block (outside the if statement):
+    spam = 0
+    print('spam') (the last print statement outside the if)
+
+2. First if block:
+    if spam == 10:
+
+    - This block includes the indented statements under the condition:
+    print('eggs')
+
+3. Nested if-else block (inside the first if block):
+    - This is the nested if-else within the first if block:
+    if spam > 5:
+        print('bacon')
+    else:
+        print('ham')
+
+    - After the nested if-else, the next statement is also part of this block:
+    print('spam') (the indented one inside the first if)
+
+
+9. Write code that prints Hello if 1 is stored in spam, prints Howdy if 2 is stored in spam, and prints Greetings! if anything else is stored in spam.
+    spam = 1
+    if spam == 1:
+        print('Hello')
+    elif spam == 2:
+        print('Howdy')
+    else:
+        print('Greetings!')
+
+
+10. What keys can you press if your program is stuck in an infinite loop?
+- Ctrl + C
+
+
+11. What is the difference between break and continue?
+- The difference between break and continue in programming is how they control loops:
+    1. break: Terminates the loop entirely. When break is encountered, the loop stops, and the program continues with the next statement after the loop.
+        - Example:
+
+        python
+        Copy code
+        for i in range(5):
+            if i == 3:
+                break  # Loop stops when i is 3
+            print(i)
+        Output: 0 1 2
+
+    2. continue: Skips the current iteration and moves on to the next one. The loop continues to run, but the code below continue for that iteration is not executed.
+        - Example:
+
+        python
+        Copy code
+        for i in range(5):
+            if i == 3:
+                continue  # Skips printing when i is 3
+            print(i)
+        Output: 0 1 2 4
+
+
+12. What is the difference between range(10), range(0, 10), and range(0, 10, 1) in a for loop?
+    1. range(10) - it generate numbers from 0 up to (but not including) 10
+    2. range(0, 10) - the first number is the start, and the second is stop, where it generates number from 0 to 9.
+    3. range(0, 10, 1) - the first and second number is the start and stop, meanwhile the third number is a step argument.
+
+
+13. Write a short program that prints the numbers 1 to 10 using a for loop. Then write an equivalent program that prints the numbers 1 to 10 using a while loop.
+    1. for loop:
+        for i in range(1, 11):
+            print(i)
+
+
+    2. while loop:
+        i = 1
+        while i <= 10:
+            print(i)
+            i += 1
+
+
+14. If you had a function named bacon() inside a module named spam, how would you call it after importing spam?
+    spam.bacon

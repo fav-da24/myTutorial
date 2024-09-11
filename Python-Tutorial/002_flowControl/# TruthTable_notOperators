@@ -1,0 +1,7 @@
+The not Operator's Truth Table
+
+
+Expression      Evaluates to . . .
+
+not True        False
+not False       True

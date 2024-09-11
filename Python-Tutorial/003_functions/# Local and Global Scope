@@ -1,0 +1,36 @@
+1. Global Scope:
+    Global scope is like a big box that you can access from anywhere in your program.
+
+    When a variable is defined in the global scope, it means that it can be used in any part of your code, no matter where it is.
+
+    For example:
+
+    ```x = 10  # Global variable
+
+    def my_function():
+        print(x)  # You can access 'x' here because it's in the global scope
+
+    my_function()  # This will print 10```
+
+    In this example, x is a global variable, so the function my_function() can use it.
+
+2. Local Scope:
+    Local scope is like a smaller box that only exists inside certain parts of your program, like inside a function.
+
+    Variables defined inside a local scope can only be used within that specific area, usually inside a function or a block of code.
+
+    For example:
+
+    ```def my_function():
+        y = 5  # Local variable
+        print(y)  # You can use 'y' inside the function
+
+    my_function()  # This will print 5
+    print(y)  # This will give an error, because 'y' is not available outside the function```
+
+    Here, y is a local variable inside my_function(). You can use it inside the function, but if you try to access it outside, it doesn't exist anymore.
+
+Quick Summary:
+Global scope: Available everywhere.
+Local scope: Available only within a specific function or block of code.
+This helps keep your variables organized and prevents confusion!
