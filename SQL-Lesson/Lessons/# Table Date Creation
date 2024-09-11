@@ -1,0 +1,4 @@
+SELECT CREATE_TIME
+FROM information_schema.tables
+WHERE table_schema = 'your_database_name'
+AND table_name = 'your_table_name';
