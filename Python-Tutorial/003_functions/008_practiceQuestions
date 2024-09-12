@@ -1,27 +1,67 @@
 1. Why are functions advantageous to have in your programs?
+    - to group code that gets executed multiple times
+    - getting rid of duplicated or copy-and-pasted code
+    - deduplication - makes your program shorter, easier to read and easier to update
+
 
 2. When does the code in a function execute: when the function is defined or when the function is called?
+    - the code is executed when the function is called.
+
 
 3. What statement creates a function?
+    - def (definition) statement
+
 
 4. What is the difference between a function and a function call?
+    - A function is a reusable block of code designed to perform a specific task. It is defined using the def keyword. A function definition includes:
+        Name: The identifier used to call the function.
+        Parameters: Optional placeholders for values you can pass to the function.
+        Body: The code that runs when the function is called.
+        Return Value: Optionally, a function can return a value using the return statement.
+    - Function Call
+        A function call is the act of executing the function by using its name and providing any necessary arguments.
+        When you call a function, you are instructing Python to run the code inside the function’s body.
+
 
 5. How many global scopes are there in a Python program? How many local scopes?
+    - Global scopes: One per module or script.
+    - Local scopes: As many as there are function or method definitions, with each function or method call creating a new local scope.
+
 
 6. What happens to variables in a local scope when the function call returns?
+    - When a function call returns, its local scope is destroyed, and the local variables within that scope are no longer accessible.
+
 
 7. What is a return value? Can a return value be part of an expression?
+    - A return value is the result produced by a function and sent back to the caller.
+    - This return value can indeed be part of larger expressions, making it a flexible tool for composing more complex operations and calculations.
+
 
 8. If a function does not have a return statement, what is the return value of a call to that function?
+    - it will return None.
+
 
 9. How can you force a variable in a function to refer to the global variable?
+    - using the global keyword
+
 
 10. What is the data type of None?
+    - Nonetype
+
 
 11. What does the import areallyourpetsnamederic statement do?
+    - It attempts to load a module named areallyourpetsnamederic.
+    - If the module exists and is accessible, it will be imported; otherwise, an ImportError will be raised.
 
 12. If you had a function named bacon() in a module named spam, how would you call it after importing spam?
+    -   import spam
+        spam.bacon()
+
 
 13. How can you prevent a program from crashing when it gets an error?
+    - errors can be handled with try and except statements
+
 
 14. What goes in the try clause? What goes in the except clause?
+    - The try clause contains the code that you want to execute and that might potentially raise an exception. It’s the block of code you are testing for errors.
+    - The except clause contains the code that will execute if an exception is raised in the try block. It handles the exception, allowing your program to continue running or to manage the error gracefully.
